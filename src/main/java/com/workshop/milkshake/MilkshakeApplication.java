@@ -16,6 +16,7 @@ public class MilkshakeApplication {
 
 	@Autowired
     private RecipeRepository rRepo;
+	@Autowired
     private SellerRepository sRepo;
 
 	public static void main(String[] args) {
@@ -29,7 +30,6 @@ public class MilkshakeApplication {
 			rRepo.save(new recipe("Rocher Ferrero", 30, "Chocolat"));
 			rRepo.save(new recipe("Antanarivo", 62, "Vanille"));
 			rRepo.save(new recipe("Carmen Miranda", 20, "Banane"));
-
 			sRepo.save(new seller("Olivia", 32));
 			sRepo.save(new seller("Laura", 23));
 		};
