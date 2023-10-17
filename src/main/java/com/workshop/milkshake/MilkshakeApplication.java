@@ -6,8 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.workshop.milkshake.entity.recipe;
-import com.workshop.milkshake.entity.seller;
+import com.workshop.milkshake.entity.Recipe;
+import com.workshop.milkshake.entity.Seller;
 import com.workshop.milkshake.repository.RecipeRepository;
 import com.workshop.milkshake.repository.SellerRepository;
 
@@ -26,12 +26,12 @@ public class MilkshakeApplication {
 	@Bean
 	public CommandLineRunner run() throws Exception {
 		return (String[] args) -> {
-			rRepo.save(new recipe("Strawberry Extasy", 15, "fraise"));
-			rRepo.save(new recipe("Rocher Ferrero", 30, "Chocolat"));
-			rRepo.save(new recipe("Antanarivo", 62, "Vanille"));
-			rRepo.save(new recipe("Carmen Miranda", 20, "Banane"));
-			sRepo.save(new seller("Olivia", 32));
-			sRepo.save(new seller("Laura", 23));
+			rRepo.save(new Recipe("Strawberry Extasy", 15, "fraise"));
+			rRepo.save(new Recipe("Rocher Ferrero", 30, "Chocolat"));
+			rRepo.save(new Recipe("Antanarivo", 62, "Vanille"));
+			rRepo.save(new Recipe("Carmen Miranda", 20, "Banane"));
+			sRepo.save(new Seller("Olivia", 32));
+			sRepo.save(new Seller("Laura", 23));
 		};
 	}
 

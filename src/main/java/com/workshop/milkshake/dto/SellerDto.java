@@ -1,27 +1,10 @@
-package com.workshop.milkshake.entity;
+package com.workshop.milkshake.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Seller {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SellerDto {
     private Long id;
     private String name;
     private int age;
 
-    public Seller(){
-
-    }
-
-    public Seller(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
     public Long getId() {
         return this.id;
@@ -46,5 +29,5 @@ public class Seller {
     public void setAge(int age) {
         this.age = age;
     }
-    
+
 }

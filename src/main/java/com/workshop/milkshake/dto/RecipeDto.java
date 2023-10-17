@@ -1,29 +1,11 @@
-package com.workshop.milkshake.entity;
+package com.workshop.milkshake.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Recipe {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RecipeDto {
     private Long id;
     private String name;
     private int quantity;
     private String mainIngredient;
-    
-    public Recipe(){
 
-    }
-
-    public Recipe(String name, int quantity, String mainIngredient) {
-        this.name = name;
-        this.quantity = quantity;
-        this.mainIngredient = mainIngredient;
-    }
 
     public Long getId() {
         return this.id;
@@ -56,5 +38,5 @@ public class Recipe {
     public void setMainIngredient(String mainIngredient) {
         this.mainIngredient = mainIngredient;
     }
-    
+
 }
