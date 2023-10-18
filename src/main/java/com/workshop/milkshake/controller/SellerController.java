@@ -42,6 +42,7 @@ public class SellerController {
         if(optionalSeller.isPresent()){
             Seller seller = optionalSeller.get();
             //Si trouvé, on le prend et convertion en DTO
+            //données présentées à l'user entity=>DTO
             SellerDto sellerDto = sellerMapper.TransformSellerEntityInSellerDto(seller);
             
             return ResponseEntity.ok(sellerDto);
@@ -54,6 +55,7 @@ public class SellerController {
     public ResponseEntity<?> create(@RequestBody SellerDto sellerDto){
         if(sellerDto != null) {
             //Le current user crée un DTO qu'on va convertir en entity avant de le persister
+            //données à entrer en BDD DTO => entity
             Seller seller = sellerMapper.TransformSellerDtoInSellerEntity(sellerDto);
             seller = sellerRepo.save(seller);
 
@@ -77,7 +79,7 @@ public class SellerController {
 
             seller = sellerRepo.save(seller);
 
-            //Convertion en DTO
+            //Convertion en DTO pcq d
             SellerDto updatedDto = sellerMapper.TransformSellerEntityInSellerDto(seller);
 
             return ResponseEntity.ok(updatedDto);
